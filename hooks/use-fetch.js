@@ -7,6 +7,7 @@ const useFetch = (cb) => {
   const [error, setError] = useState(null);
 
   const fn = async (...args) => {
+    console.log(args);
     setLoading(true);
     setError(null);
 

@@ -53,7 +53,7 @@ export async function generateCoverLetter(data) {
       data: {
         content,
         jobDescription: data.jobDescription,
-        companyNAme: data.companyNAme,
+        companyName: data.companyName,
         jobTitle: data.jobTitle,
         userId: user.id,
       },
@@ -67,6 +67,7 @@ export async function generateCoverLetter(data) {
 }
 
 export async function getCoverLetters() {
+  console.log("getCoverLetters");
   const { userId } = await auth();
   if (!userId) throw new Error("Unauthorized");
 
@@ -75,8 +76,8 @@ export async function getCoverLetters() {
   });
 
   if (!user) throw new Error("User not found");
-
-  return await db.coverLetter.findMany({
+  console.log(user);
+  const coverLetters = await db.coverLetter.findMany({
     where: {
       userId: user.id,
     },
@@ -84,6 +85,10 @@ export async function getCoverLetters() {
       createdAt: "desc",
     },
   });
+
+  console.log("cover: ", coverLetters);
+
+  return coverLetters;
 }
 
 export async function getCoverLetter(id) {

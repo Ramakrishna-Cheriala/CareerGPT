@@ -54,7 +54,7 @@ CREATE TABLE "CoverLetter" (
     "userId" TEXT NOT NULL,
     "content" TEXT NOT NULL,
     "jobDescription" TEXT,
-    "companyNAme" TEXT,
+    "companyName" TEXT,
     "jobTitle" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,

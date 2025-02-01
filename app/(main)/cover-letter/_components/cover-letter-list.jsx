@@ -59,7 +59,7 @@ export default function CoverLetterList({ coverLetters }) {
             <div className="flex items-start justify-between">
               <div>
                 <CardTitle className="text-xl gradient-title">
-                  {letter.jobTitle} at {letter.companyNAme}
+                  {letter.jobTitle} at {letter.companyName}
                 </CardTitle>
                 <CardDescription>
                   Created {format(new Date(letter.createdAt), "PPP")}
